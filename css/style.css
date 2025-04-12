@@ -1,0 +1,248 @@
+/* General reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #02ff06;
+    font-family: 'bitwiseFont', sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  @font-face {
+    font-family: 'bitwiseFont';
+    src: url('../bitwise-font/Bitwise-m19x.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/outer-space.mp4'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: scroll; 
+  }
+  
+  #background-video {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    z-index: -1; 
+    pointer-events: none; 
+  }
+  
+  
+  /* Ensure the content box is centered and responsive */
+  .content-box {
+    background-color: #02caca;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 0px 8px 15px rgba(2, 255, 6, 0.3);
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    position: relative; 
+      z-index: 1; 
+      background-color: rgba(0, 0, 0, 0.1); /* Add some transparency to content box */
+  }
+  
+  /* Set header styles */
+  h1, h2, h3 {
+    color: white;
+    text-align: center;
+    color: #02ff06;
+    font-family: 'bitwiseFont', sans-serif;
+  }
+  
+  /* Button container styling to ensure buttons are aligned correctly */
+  .button-container {
+    display: flex;
+    gap: 10px; /* space between buttons */
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Ensures the buttons stack on small screens */
+    border-radius: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: rgba(30, 29, 29, 0.959);
+    color: #02ff06;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    flex: 1; 
+    margin: 5px;
+  }
+  
+  #date-input {
+    background-color: rgba(30, 29, 29, 0.959);
+    color: #02ff06;
+    outline: 2px solid rgba(30, 29, 29, 0.959);
+  }
+  
+  #explanation-text {
+    color: #02ff06;
+    font-family: 'bitwiseFont', sans-serif;
+    font-size: 1.2rem;
+  
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  div h3 {
+    padding: 20px;
+  }
+  
+  div h2 {
+    padding: 20px;
+  }
+  
+  .explanation-text {
+    color: #02ff06;
+  }
+  
+  /* Image and iframe adjustments for responsiveness */
+  img, iframe {
+    display: none;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+  }
+  
+  iframe {
+    display: block; /* make sure iframe takes up its full width */
+    margin: 0 auto;
+    width: 100%;
+    max-height: 500px; /* Adjust to your desired maximum height */
+    height: auto; 
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+  }
+  
+  /* Media queries for responsive design */
+  
+  /* Mobile phones (max width: 480px) */
+  @media (max-width: 480px) {
+    .content-box {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    button {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    h2, h3 {
+      font-size: 1.2rem;
+    }
+  
+    img, iframe {
+      max-height: 300px; /* Ensure media doesn't overwhelm small screens */
+    }
+  }
+  
+  /* Tablets and medium screens (max width: 768px) */
+  @media (max-width: 768px) {
+    .content-box {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    button {
+      font-size: 16px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2, h3 {
+      font-size: 1.4rem;
+    }
+  
+    img, iframe {
+      max-height: 400px;
+    }
+  }
+  
+  /* Desktops and large screens (min width: 1024px) */
+  @media (min-width: 1024px) {
+    .content-box {
+      max-width: 800px;
+      padding: 30px;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    h2, h3 {
+      font-size: 1.6rem;
+    }
+  
+    img, iframe {
+      height: auto;
+    }
+  }
+  
+  
+  /* CSS for typewriter effect */
+  
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  .typewriter-text {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+  }
+  
+  /* Add this to your CSS file or within a <style> tag */
+  .fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Adjust the duration (1s) as needed */
+  }
+  
+  .fade-in.show {
+    opacity: 1;
+  }
+  
